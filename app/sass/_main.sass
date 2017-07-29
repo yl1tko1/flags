@@ -1,0 +1,1248 @@
+@font-face
+  font-family: 'Open Sans'
+  src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format("truetype")
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: 'Open Sans'
+  src: url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format("truetype")
+  font-weight: 900
+  font-style: normal
+
+
+@font-face
+  font-family: 'Open Sans'
+  src: url('../fonts/Open_Sans/OpenSans-Regular.ttf') format("truetype")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'Open Sans'
+  src: url('../fonts/Open_Sans/OpenSans-Light.ttf') format("truetype")
+  font-weight: 300
+  font-style: normal
+
+
+@font-face
+	font-family: 'Oswald'
+	src: url('../fonts/Oswald/Oswald-SemiBold.ttf') format('truetype')
+	font-weight: 600
+	font-style: normal
+
+
+@font-face
+	font-family: 'Oswald'
+	src: url('../fonts/Oswald/Oswald-Regular.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+
+@font-face
+	font-family: 'Oswald'
+	src: url('../fonts/Oswald/Oswald-Bold.ttf') format('truetype')
+	font-weight: bold
+	font-style: normal
+
+
+$f-opan: "Open Sans"
+$f-oswald: "Oswald"
+$c-bluer: #1a5095
+$c-red: #aa474b
+$c-silver: #f2f2f2
+$c-dark-silver: #333
+
+$tablet: 1170
+$mobile: 768
+
+body
+  font-size: 16px
+  font-family: $f-opan
+  line-height: 1.2
+h1
+  font-size: 45px
+  font-family: "Oswald"
+  font-weight: 700
+  text-transform: uppercase
+  line-height: 1.2
+
+h2
+  font-size: 30px
+  font-family: $f-opan
+  font-weight: 700
+  text-transform: uppercase
+  line-height: 1
+  color: #336699
+
+h3
+  font-size: 30px
+  font-family: $f-opan
+  font-weight: 700
+  line-height: 1.2
+  color: #000007
+
+h4
+  font-size: 26px
+  font-family: $f-opan
+  font-weight: 700
+  text-transform: uppercase
+  line-height: 1.2
+  color: #aa474b
+
+h5
+  font-size: 16px
+  font-family: $f-opan
+  color: #000007
+  font-weight: 700
+  line-height: 1.2
+
+h6
+  font-size: 14px
+  font-family: $f-opan
+  color: #1a5095
+  font-weight: 700
+  text-transform: uppercase
+  line-height: 1.2
+
+p
+  color: #333333
+
+a
+  color: #1a5095
+  text-decoration: none
+  &:hover, &:active
+    color: #aa474b
+ul
+  line-height: 0
+  font-size: 0
+
+li
+  font-size: 12px
+  font-family: $f-opan
+  line-height: 1.5
+  margin-bottom: 14px
+  color: #aa474b
+  span
+    color: #000007
+img
+  width: 100%
+
+/* Класс псевдораспорки */
+.clearfix::after
+    content: ""
+    display: table
+    clear: both
+
+
+.container
+  max-width: 1600px
+  width: 100%
+  margin: 0 auto
+  +rmm($mobile, $tablet)
+    width: 90%
+  +r($mobile)
+    width: 90%
+  &__inner
+    max-width: 1180px
+    margin: 0 auto
+    width: 100%
+    +rmm($mobile, $tablet)
+      width: 90%
+    +r($mobile)
+      width: 90%
+.header
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 36
+  background: #fff
+  +rmm($mobile, $tablet)
+    position: static
+  +r($mobile)
+    position: static
+  &__top-line
+    width: 100%
+    height: 7px
+    background-color: #e9e9ea
+    margin-bottom: 20px
+  &__top
+    padding-bottom: 5px
+    +rmm($mobile, 965)
+
+  .logo
+    width: 213px
+    height: 76px
+    margin-left: 7px
+    margin-right: 57px
+    float: left
+    +rmm($mobile, $tablet)
+      width: 150px
+      margin-right: 3%
+      img
+        width: 100%
+        height: auto
+    +r($mobile)
+      float: none
+      display: block
+      margin: 0 auto
+  .user-nav
+    float: left
+    margin-top: 48px
+    +rmm(965, $tablet)
+      margin-top: 30px
+    +rmm($mobile, 965)
+      float: right
+      margin-top: 16px
+    +r($mobile)
+      float: none
+      margin: 20px auto 0
+      display: table
+  .search
+    float: right
+
+.user-nav
+  list-style: none
+  min-width: 309px
+  &__item
+    display: inline-block
+    vertical-align: top
+    margin-right: -4px
+    & + .user-nav__item
+      margin-left: 26px
+      +rmm($mobile, $tablet)
+        margin-left: 5%
+      +r($mobile)
+        margin-left: 15px
+    a
+      text-transform: uppercase
+      font-size: 12px
+      font-weight: 400
+      line-height: 19px
+  li:first-child::before
+    content: "\f090"
+    font-family: "FontAwesome"
+    font-size: 12
+    color: $c-bluer
+    padding-right: 3px
+  li:last-child
+    margin-right: 0
+
+.search
+  +rmm($mobile, 965)
+    width: 100%
+    display: none
+  +r($mobile)
+    display: none
+  p
+    font-weight: 700
+    color: $c-bluer
+    font-size: 14px
+    position: relative
+    margin-bottom: 15px
+    text-align: right
+    margin-top: 1px
+    margin-right: 1px
+    +rmm($mobile, $tablet)
+      font-size: 12px
+    .fa
+      content: "\f10b"
+      max-width: 14px
+      max-height: 24px
+      color: $c-bluer
+      font-family: "FontAwesome"
+      font-size: 33px
+      font-weight: 400
+      margin-top: -14px
+      margin-right: 7px
+      vertical-align: middle
+    span
+      color: $c-red
+      font-family: $f-oswald
+      font-size: 18px
+      font-weight: 700
+  &__panel
+    display: inline-block
+    width: 100%
+  &__form
+    border: 1px solid $c-bluer
+    min-width: 429px
+    float: left
+    margin-right: 15px
+    +rmm($mobile, $tablet)
+      min-width: 200px
+      width: 80%
+
+    input
+      padding: 11px 15px 13px 14px
+      font-size: 14px
+      font-weight: 400
+      text-transform: uppercase
+      width: 90%
+      line-height: 14px
+      +rmm($mobile, $tablet)
+        width: 80%
+    button
+      background: none
+      padding: 11px 0px 8px
+      color: $c-red
+      font-size: 18px
+      font-weight: 400
+      float: right
+      margin-right: 22px
+      line-height: 18px
+      &:hover, &:active
+        color: #333
+  &__social
+    display: inline-block
+    float: left
+    margin-top: 12px
+  &__social-icon
+    font-size: 18px
+    margin-right: 0px
+    +rmm($mobile, 960)
+      font-style: 14px
+    &+ .search__social-icon
+      margin-left: 5px
+
+.mobile-nav
+  display: none
+  +r($mobile)
+    width: 40px
+    display: block
+    margin-top: 10px
+    float: right
+    padding: 5px 0
+    span
+      width: 100%
+      height: 2px
+      background: #fff
+      margin-bottom: 10px
+      display: block
+
++r($mobile)
+  .main-nav__list.is-mobile
+    display: none
+  .main-nav__list.is-mobile.active
+    display: block
+    position: absolute
+    top: 100%
+    z-index: 44
+    left: 0
+    width: 100%
+    background: $c-bluer
+    li
+      width: 100%
+      a
+        text-align: center
+    .submenu
+      display: none
+  .mobile-nav.active
+    position: relative
+    display: table
+    width: 40px
+    height: 40px
+    margin-top: 10px
+    margin-bottom: 5px
+    transition: .5s
+    span:first-child
+      transform: rotate(45deg)
+      position: absolute
+      top: 20px
+    span:nth-child(2)
+      transform: rotate(-45deg)
+      position: absolute
+      top: 20px
+    span:last-child
+      display: none
+
+.main-nav
+  background: $c-bluer
+  li
+    display: inline-block
+    margin: 0
+    vertical-align: middle
+    a.main-nav__link
+      color: #ffffff
+      font-size: 17px
+      font-weight: 700
+      line-height: 17px
+      text-transform: uppercase
+      padding: 20px 12px 23px 10px
+      display: block
+      transition: .5s
+      position: relative
+      +rmm($mobile, $tablet)
+        font-size: 14px
+      &:hover, &:active
+        background: $c-red
+      &:hover::before
+        content: "\f106"
+        position: absolute
+        color: #ffffff
+        font-family: "FontAwesome"
+        font-size: 19px
+        font-weight: bold
+        line-height: 24px
+        bottom: 0
+        width: 100%
+        left: 0
+        text-align: center
+    &:hover .submenu
+      display: block
+  &__wrap
+    position: relative
+    display: table
+  &__list
+    width: 1010px
+    float: left
+    +rmm($mobile, $tablet)
+      width: 100%
+
+
+.submenu
+  display: none
+  position: absolute
+  width: 100%
+  top: 100%
+  margin-top: -2px
+  background: #f2f2f2
+  border: 2px solid $c-red
+  padding: 43px 74px
+  left: 0
+  z-index: 33
+  &__container
+    max-width: 954px
+    width: 100%
+  &__title
+    font-size: 16px
+    font-weight: bold
+    text-transform: uppercase
+    color: $c-red
+    font-weight: 700
+    letter-spacing: 0.5px
+    line-height: 37px
+    display: block
+  &__list
+    float: left
+    margin-right: 81px
+    width: 220px
+
+    li
+      position: relative
+      padding-left: 10px
+      line-height: 35px
+      display: inherit
+      a.state__all
+        color: $c-red
+      a
+        font-size: 17px
+        color: $c-bluer
+        span
+          color: $c-bluer
+          display: block
+          margin-top: -17px
+        span.modify
+          margin-left: 7px
+          margin-bottom: 2px
+
+        &:hover
+          background: none
+          color: $c-red
+          span
+            color: $c-red
+
+        &+ a
+          margin-top: 3px
+      a.active
+        color: $c-red
+  &__item--margin
+    margin-left: 7px
+  &__item::before
+    content: "\f105"
+    position: absolute
+    display: block
+    color: $c-red
+    font-family: "FontAwesome"
+    font-size: 16px
+    left: 0px
+    top: 0px
+
+.custom-flag
+  float: left
+  max-width: 653px
+  width: 100%
+  margin-top: 11px
+  &__item
+    width: 203px
+    height: 147px
+    display: block
+    float: left
+    margin-right: 22px
+    margin-bottom: 20px
+    position: relative
+    &:hover, &:active
+      background: none
+      span
+        color: $c-red
+    span
+      position: absolute
+      bottom: 0
+      color: #f2f2f2
+      font-size: 14px
+      font-weight: bold
+      left: 10px
+      bottom: 13px
+      font-weight: 400
+  &__item:nth-child(5)
+    span
+      bottom: 7px
+      line-height: 1.2
+  &__item:nth-child(6)
+    span
+      bottom: 7px
+      line-height: 1.2
+  &__item:nth-child(3),
+  &__item:nth-child(6)
+    margin-right: 0
+
+a.state__all
+  text-transform: uppercase
+  color: $c-red
+  font-weight: 700
+.submenu.state
+  padding: 10px 10px 30px
+  .submenu__container
+    min-width: 1170px
+.submenu__list.state__list
+  width: auto
+  margin-top: 2px
+.submenu__list.state__list:first-child
+  margin-right: 133px
+  margin-left: 63px
+.submenu__list.state__list:nth-child(2)
+  margin-right: 174px
+.submenu__list.state__list:nth-child(3)
+  margin-right: 164px
+  margin-top: 3px
+.submenu__list.state__list:last-child
+  margin-right: 0
+.cart
+  min-width: 130px
+  float: right
+  +rmm($mobile, $tablet)
+    min-width: 100px
+    position: absolute
+    top: 100%
+    bottom: 0
+    right: 0
+    background: $c-bluer
+    z-index: 32
+    padding: 0 10px 10px 10px
+    display: table
+  +r($mobile)
+    float: left
+  &__item
+    position: relative
+    width: 49px
+    height: 41px
+    display: inline-block
+    margin-right: 28px
+    span
+      position: relative
+      z-index: 3
+      color: $c-red
+      font-size: 18px
+      font-weight: 700
+      display: table
+      margin: 12px auto 0
+      width: 100%
+      text-align: center
+      margin-left: 10px
+    &::after
+      content: "\f07a"
+      font-family: "FontAwesome"
+      top: -4px
+      left: 4px
+      position: absolute
+      color: #eaeaea
+      font-size: 52px
+      font-weight: 400
+  &__price
+    display: inline-block
+    color: #ffffff
+    font-size: 14px
+    font-weight: 700
+    margin-top: 19px
+    vertical-align: top
+
+.banner
+  width: 100%
+  margin-top: 174px
+  +rmm($mobile, $tablet)
+    margin-top: 0
+  +r($mobile)
+    margin-top: 0
+  &__item
+    min-height: 692px
+    display: table
+  &__item.flag-usa
+    background: url(../img/slide-1.jpg) top center no-repeat
+    background-size: cover
+    width: 100%
+    height: 100%
+    +rmm($mobile, $tablet)
+      background-position-x: -254px
+    .banner__content
+      max-width: 616px
+      +r($mobile)
+        max-width: none
+        width: 100%
+  &__item.flag-state
+    background: $c-bluer
+    background-size: cover
+    width: 100%
+    height: 100%
+  &__content
+    margin-top: 252px
+    h1
+      color: #ffffff
+      font-family: $f-oswald
+      font-size: 33px
+      font-weight: 400
+      text-transform: uppercase
+      text-align: center
+      margin-bottom: 34px
+      letter-spacing: 0.4px
+      span
+        font-size: 18px
+        vertical-align: top
+        line-height: 35px
+    p
+      font-size: 17px
+      font-weight: 600
+      line-height: 25px
+      color: #fff
+      text-align: center
+      letter-spacing: 0.2px
+      margin-bottom: 51px
+
+.shop-now
+  display: block
+  width: 267px
+  height: 66px
+  background: url(../img/shop-now.png) no-repeat
+  background-size: 267px 66px
+  color: #ffffff
+  font-family: "Open Sans"
+  font-size: 21px
+  font-weight: 700
+  line-height: 24px
+  letter-spacing: 4px
+  text-transform: uppercase
+  padding: 20px 0px 18px 59px
+  margin-left: 158px
+  position: relative
+  &:hover, &:active
+    color: $c-bluer
+  +r($mobile)
+    margin: 0 auto
+  &::before
+    content: "\f005"
+    display: block
+    position: absolute
+    font-family: 'FontAwesome'
+    font-size: 26px
+    color: $c-bluer
+    left: 17px
+    top: 21px
+  &::after
+    content: ""
+    display: block
+    position: absolute
+    color: #fff
+    right: 10px
+    top: 19px
+    border: 12px solid transparent
+    border-left: 12px solid #fff
+
+.banner
+  .owl-dots
+    padding: 16px 14px 13px 14px
+    position: absolute
+    left: 50%
+    margin-left: -65px
+    bottom: 0
+    background: rgba(0, 0, 0, 0.3)
+    .owl-dot
+      display: inline-block
+      &+ .owl-dot
+        margin-left: 6.8px
+      span
+        width: 15px
+        height: 15px
+        display: block
+        border: 2px solid #fff
+        border-radius: 50%
+    .owl-dot.active
+      display: inline-block
+      span
+        width: 15px
+        height: 15px
+        display: block
+        border: 2px solid #fff
+        background: #fff
+        border-radius: 50%
+
+.quality
+  padding: 63px 0 56px
+  h2
+    text-align: center
+    font-size: 30px
+    font-weight: 700
+    letter-spacing: 0.2em
+    text-transform: uppercase
+    margin-bottom: 6px
+    line-height: 30px
+    padding-left: 6px
+    +r($mobile)
+      margin-bottom: 50px
+    i
+      font-size: 26px
+      letter-spacing: 0.1em
+  p
+    text-align: center
+    line-height: 30px
+    +rmm($mobile, $tablet)
+      font-size: 14px
+
+.flags-bar
+  display: inline-block
+  width: 100%
+  +r($mobile)
+    .container
+      width: 100%
+  &__item
+    width: 33.334%
+    min-height: 382px
+    margin-right: -4px
+    display: inline-block
+    margin-bottom: -3px
+    +rmm($mobile, $tablet)
+      min-height: 182px
+    +r($mobile)
+      min-height: 182px
+      width: 100%
+    &:first-child
+      .flags-bar__title
+        word-spacing: -6px
+    &:nth-child(2)
+      .flags-bar__title
+        word-spacing: -3px
+    &:last-child
+      word-spacing: -4px
+  &__item.military
+    background: #000 url(../img/flags-bar1.jpg) no-repeat
+    background-size: cover
+  &__item.international
+    background: #000 url(../img/flags-bar2.jpg) no-repeat
+    background-size: cover
+  &__item.sport
+    background: #000 url(../img/flags-bar3.jpg) no-repeat
+    background-size: cover
+  &__title
+    background: rgba(0, 0, 0, 0.57)
+    padding: 20px 0 24px
+    display: table
+    margin: 145px auto 60px
+    color: #ffffff
+    font-family: 'Oswald'
+    font-size: 44px
+    font-weight: 700
+    text-transform: uppercase
+    max-width: 441px
+    width: 100%
+    line-height: 57px
+    padding-left: 18px
+    +rmm($mobile, $tablet)
+      font-size: 34px
+      margin: 85px auto 60px
+      text-align: center
+      line-height: 34px
+    +r($mobile)
+      margin: 90px auto 50px
+      font-size: 27px
+      text-align: center
+      display: block
+
+
+
+  &__link
+    color: #ffffff
+    font-size: 16px
+    font-weight: 700
+    line-height: 24px
+    text-transform: uppercase
+    display: table
+    margin: 93px auto 0
+    letter-spacing: 0.2em
+
+.featured-items
+  background: #f2f2f2
+  padding: 56px 0
+  b.title
+    color: $c-red
+    font-size: 26px
+    line-height: 30px
+    text-transform: uppercase
+    font-weight: 700
+    margin-bottom: 50px
+    display: block
+    letter-spacing: 0.2em
+    i
+      color: #1a5095
+      font-weight: 400
+      margin-right: 10px
+      letter-spacing: 0.1em
+    &::before
+      content: ""
+      border-top: 1px solid $c-red
+      border-bottom: 1px solid $c-red
+      width: 100%
+      height: 4px
+      display: block
+      margin-bottom: 11px
+    &__list
+      padding: 0
+
+.item
+  max-width: 279px
+  width: 100%
+  display: inline-block
+  float: left
+  border-bottom: 1px solid #999
+  min-height: 593px
+  +rmm(960, $tablet)
+    max-width: none
+    width: 23%
+  +rmm($mobile, 960)
+    max-width: none
+    width: 48%
+    margin-left: 5px
+    margin-bottom: 20px
+  +r($mobile)
+    display: table
+    float: none
+    margin: 5px auto 20px
+  &+ .item
+    margin-left: 21px
+    +r($mobile)
+      margin-left: auto
+    +rmm($mobile, 960)
+      &:nth-child(3)
+        margin-left: 0
+  &__thumbnail
+    background: #fff
+    width: 100%
+    min-height: 286px
+    padding: 20px
+    &+ .item__old-price
+      margin-top: 6px
+      display: block
+    &+ .item__price
+      margin-top: 39px
+      display: block
+    img
+      width: 100%
+  &__content
+    min-height: 85px
+    &+ .item__nav
+      margin-top: 38px
+  &__old-price
+    color: #666666
+    font-family: "Open Sans"
+    font-size: 17px
+    font-weight: 400
+    line-height: 33px
+    text-decoration: line-through
+    text-transform: uppercase
+    text-align: center
+  &__price
+    color: #aa474b
+    font-family: "Open Sans"
+    font-size: 30px
+    font-weight: 700
+    line-height: 37px
+    text-transform: uppercase
+    display: block
+    text-align: center
+    margin-bottom: 16px
+  &__title
+    color: #000007
+    font-family: "Open Sans"
+    font-size: 16px
+    font-weight: 700
+    text-align: center
+    display: block
+    margin-bottom: 20px
+    line-height: 20px
+  &__description
+    color: #333333
+    font-family: "Open Sans"
+    font-size: 14px
+    font-weight: 400
+    line-height: 16px
+    display: block
+    text-align: center
+  &__stars
+    color: #1a5095
+    font-size: 20px
+    line-height: 37px
+    text-transform: uppercase
+    display: table
+    margin: 0 auto 15px
+    letter-spacing: 2px
+  &__nav
+    max-width: 232px
+    width: 100%
+    margin: 0 auto 29px
+  &__link
+    border: 1px solid #999
+    font-size: 30px
+    color: #999
+    width: 48px
+    height: 48px
+    display: inline-block
+    text-align: center
+    +rmm(960, $tablet)
+      width: 38px
+      height: 38px
+      font-size: 21px
+      padding: 5px
+    &+ .item__link
+      margin-left: 10px
+    &:hover
+      border: 1px solid $c-red
+    &--cart
+      background: $c-red
+      color: #fff
+      border: 1px solid $c-red
+      &:hover
+        background: transparent
+        color: $c-red
+
+.item:last-child .item__title
+  margin-top: 20px
+  font-size: 18px
+  +rmm(960, $tablet)
+    margin-bottom: 25px
+
+.info
+  padding: 65px 0 43px
+  &__wrap
+    padding: 0 79px
+    margin-bottom: 96px
+    display: table
+    +rmm($mobile, $tablet)
+      padding: 0 30px
+    +r($mobile)
+      padding: 0
+  &__item
+    width: 27.3%
+    float: left
+    +rmm($mobile, $tablet)
+      width: 30%
+    +r($mobile)
+      width: 100%
+      margin-bottom: 50px
+    &+ .info__item
+      margin-left: 92px
+      +rmm($mobile, $tablet)
+        margin-left: 25px
+      +r($mobile)
+        margin-left: 0
+  &__icon
+    margin-bottom: 15px
+    min-height: 80px
+    img
+      display: block
+      margin: 0 auto
+      width: auto
+  &__title
+    color: $c-red
+    display: block
+    text-align: center
+    font-size: 26px
+    font-weight: 700
+    text-transform: uppercase
+    margin-bottom: 20px
+    letter-spacing: 0.2em
+    text-indent: 13px
+  &__description
+    font-size: 16px
+    text-align: center
+    line-height: 24px
+    +rmm($mobile, 965)
+      font-size: 14px
+    span
+      font-weight: 700
+    a
+      display: block
+      text-align: center
+      font-size: 12px
+      font-weight: 700
+      text-transform: uppercase
+
+.testimonials
+  background: #f2f2f2
+  padding: 48px 0
+  &__left
+    max-width: 331px
+    display: inline
+    float: left
+    margin-right: 51px
+    margin-top: 26px
+    +rmm($mobile, $tablet)
+      max-width: none
+      width: 100%
+      margin-bottom: 20px
+    +r($mobile)
+      max-width: none
+      width: 100%
+    img
+      display: inline-block
+      width: auto
+      vertical-align: middle
+      margin-right: 16px
+      +r($mobile)
+        display: block
+        margin: 0 auto 20px
+  &__title
+    color: $c-red
+    font-size: 26px
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.2em
+    +r($mobile)
+      text-align: center
+      display: block
+      margin-bottom: 20px
+  &__right
+    float: left
+    max-width: 795px
+    width: 100%
+    p
+      line-height: 24px
+      margin-bottom: 25px
+  &__meta
+    display: inline-block
+    width: 100%
+  &__author
+    display: inline
+    font-weight: 400
+    font-style: italic
+    font-size: 17px
+    +r($mobile)
+      display: block
+  &__navigation
+    display: inline-block
+    float: right
+    +r($mobile)
+      margin-top: 30px
+      float: none
+    a
+      text-transform: uppercase
+      color: $c-bluer
+      font-weight: 700
+      font-size: 12px
+      line-height: 30px
+      margin-right: 3px
+      +r($mobile)
+        width: 100%
+        display: block
+      &::after
+        content: "\f105"
+        font: 16px
+        font-family: "FontAwesome"
+        vertical-align: top
+        padding-left: 7px
+        margin-right: 10px
+      &:hover
+        color: $c-red
+
+.footer
+  background: $c-bluer
+  padding: 30px 0 31px
+  +rmm($mobile, $tablet)
+    .container__inner
+      width: 100%
+      padding: 0px 5px
+  &__top
+    display: inline-block
+    width: 100%
+    margin-bottom: 41px
+  &__info
+    display: table
+    float: left
+    max-width: 610px
+    width: 100%
+    margin-right: 69px
+    +rmm($mobile, 965)
+      max-width: none
+    +r($mobile)
+      max-width: none
+      width: 100%
+      margin-right: 0
+      max-width: none
+
+  &__contacts
+    max-width: 202px
+    width: 100%
+    border-right: 1px solid #FFF
+    float: left
+    margin-right: 23px
+    +rmm($mobile, 965)
+      margin-right: 50px
+    +r($mobile)
+      width: 100%
+      border: 0
+      float: none
+      max-width: none
+      margin-right: 0
+  &__logo
+    width: 152px
+    height: 58px
+    margin: 6px 1px 28px
+    +rmm($mobile, 960)
+      margin: 28px auto 6px
+  &__adress
+    color: #fff
+    line-height: 24px
+    margin-bottom: 29px
+    display: block
+    font-size: 14px
+    +r($mobile)
+      margin: 20px auto 29px
+      text-align: center
+  &__social
+    +r($mobile)
+      width: 140px
+      margin: 0 auto 20px
+    a
+      color: #fff
+      font-size: 34px
+      &:hover
+        color: $c-red
+      &+ a
+        margin-left: 21px
+  &__newsletter
+    float: left
+    max-width: 376px
+    width: 100%
+    border-right: 1px solid #FFF
+    +rmm($mobile, 965)
+      max-width: none
+      width: 60%
+      border: 0
+    +r($mobile)
+      max-width: none
+      border: 0
+    p
+      color: #fff
+      line-height: 24px
+      margin-bottom: 30px
+      font-size: 14px
+  &__title
+    display: block
+    color: #ffffff
+    font-size: 25px
+    font-weight: 700
+    line-height: 30px
+    letter-spacing: 0.2em
+    text-transform: uppercase
+    margin-bottom: 17px
+    +r($mobile)
+      text-align: center
+  &__nav
+    float: left
+    margin-top: 42px
+    +rmm($mobile, 965)
+      display: none
+    +r($mobile)
+      display: none
+  &__list
+    float: left
+    &+ .footer__list
+      margin-left: 70px
+      +rmm($mobile, $tablet)
+        margin-left: 30px
+    li
+      margin-bottom: 0
+      line-height: 0
+      &+ li
+        margin-top: 1px
+      a
+        color: #f2f2f2
+        font-family: "Open Sans"
+        font-size: 12px
+        font-weight: 400
+        line-height: 30px
+        text-transform: uppercase
+        &:hover
+          color: $c-red
+  &__bot
+    display: inline-block
+    width: 100%
+  &__copyright
+    color: #f2f2f2
+    font-size: 12px
+    font-weight: 400
+    line-height: 25px
+    float: left
+  &__paymant-card
+    width: 287px
+    float: right
+    margin-top: -13px
+    +r($mobile)
+      float: none
+.form-newsletter
+  +r($mobile)
+    width: 90%
+    display: table
+  input::placeholder
+    color: #fff
+    font-size: 14px
+    letter-spacing: 0.05em
+  input
+    text-transform: uppercase
+    color: #fff
+    line-height: 14px
+    padding: 18px 18px 16px 18px
+    background: transparent
+    border: 1px solid #eaeaea
+    display: inline
+    margin-right: 24px
+    float: left
+    min-width: 277px
+    +r($mobile)
+      margin-right: 0
+      min-width: none
+      width: 100%
+  button
+    width: 54px
+    height: 50px
+    font-size: 35px
+    color: #fff
+    background: #aa474b
+    float: left
+    padding: 0 24px
+    letter-spacing: 0.2em
+    +r($mobile)
+      width: 100%
+      margin-top: 10px
+
+ul.footer__list:last-child
+  margin-left: 100px
+  margin-top: -3px
+  +rmm($mobile, $tablet)
+    display: none
